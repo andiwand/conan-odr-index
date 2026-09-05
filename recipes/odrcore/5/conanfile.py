@@ -45,7 +45,7 @@ class OpenDocumentCoreConan(ConanFile):
             self.options.rm_safe("fPIC")
 
     def requirements(self):
-        self.requires("pugixml/1.15")
+        self.requires("pugixml/1.16")
         self.requires("cryptopp/8.9.0")
         self.requires("miniz/3.0.2")
         self.requires("nlohmann_json/3.12.0")
@@ -53,7 +53,7 @@ class OpenDocumentCoreConan(ConanFile):
         self.requires("uchardet/0.0.8")
         self.requires("utfcpp/4.0.8")
         self.requires("argon2/20190702-odr")
-        self.requires("cpp-httplib/0.28.0")
+        self.requires("cpp-httplib/0.53.1")
 
         if self.options.get_safe("with_pdf2htmlEX"):
             self.requires("pdf2htmlex/0.18.8.rc1-odr-git-eb5d291")
@@ -63,7 +63,7 @@ class OpenDocumentCoreConan(ConanFile):
             self.requires("libmagic/5.45")
 
     def build_requirements(self):
-        self.test_requires("gtest/1.17.0")
+        self.test_requires("gtest/1.18.0")
 
     def validate_build(self):
         if self.settings.get_safe("compiler.cppstd"):
