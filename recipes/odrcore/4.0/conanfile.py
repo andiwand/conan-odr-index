@@ -43,7 +43,7 @@ class OpenDocumentCoreConan(ConanFile):
             self.options.rm_safe("fPIC")
 
     def requirements(self):
-        self.requires("pugixml/1.15")
+        self.requires("pugixml/1.16")
         self.requires("cryptopp/8.9.0")
         self.requires("miniz/3.0.2")
         self.requires("nlohmann_json/3.12.0")
@@ -52,7 +52,7 @@ class OpenDocumentCoreConan(ConanFile):
         self.requires("utfcpp/4.0.8")
 
     def build_requirements(self):
-        self.test_requires("gtest/1.17.0")
+        self.test_requires("gtest/1.18.0")
 
     def validate_build(self):
         if self.settings.get_safe("compiler.cppstd"):
