@@ -54,7 +54,7 @@ class wvWareConan(ConanFile):
     def requirements(self):
         self.requires("libgsf/1.14.52", transitive_headers=True)
         self.requires("glib/2.81.0-odr")
-        self.requires("libiconv/1.17")
+        self.requires("libiconv/1.19")
         self.requires("zlib/1.3.1")
         self.requires("libpng/[>=1.6.53 <2]")
 
@@ -65,7 +65,7 @@ class wvWareConan(ConanFile):
     def build_requirements(self):
 
         # only if we have to call autoreconf
-        self.tool_requires("libtool/2.4.7")
+        self.tool_requires("libtool/2.6.2")
         # only if upstream configure.ac relies on PKG_CHECK_MODULES macro
         if not self.conf.get("tools.gnu:pkg_config", check_type=str):
             self.tool_requires("pkgconf/2.5.1")
@@ -77,7 +77,7 @@ class wvWareConan(ConanFile):
         # for msvc support to get compile & ar-lib scripts (may be avoided if shipped in source code of the library)
         # not needed if libtool already in build requirements
         if is_msvc(self):
-            self.tool_requires("automake/1.16.5")
+            self.tool_requires("automake/1.19")
 
     def layout(self):
         basic_layout(self, src_folder="src")
